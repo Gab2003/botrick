@@ -56,7 +56,7 @@ async def on_message(message):
     if message.content.lower().startswith('ri!mutar'):
         cargomod = discord.utils.find(lambda r: r.name == "Moderadores", message.server.roles)
         if message.author.top_role.position >=  cargomod.position:
-            member = re.sub('ri!mute ', '', message.content)
+            member = re.sub('ri!mutar ', '', message.content)
             member = discord.utils.find(lambda r: r.mention == member , message.server.members)
             cargomute = discord.utils.find(lambda r: r.name == "Mutado", message.server.roles)
             await client.add_roles(member, cargomute)
