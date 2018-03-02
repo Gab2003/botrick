@@ -1,3 +1,1 @@
-# botrick
-
-abc
+# Rick
