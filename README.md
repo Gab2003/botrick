@@ -1,9 +1,8 @@
 # Bot Rick
 <br>
-<br>
-<br>
 
 ***Comandos do Bot:***
+<br>
 
 <p>• ri!ajuda → Mostra os comandos disponíveis no servidor.</p>
 <p>• ri!prefix → Mostra o prefix do Bot.</p>
