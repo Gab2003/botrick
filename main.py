@@ -56,7 +56,7 @@ async def on_message(message):
     if message.content.lower().startswith('ri!elos'):
         embed1 = discord.Embed(
             title="→Elos diponíveis:",
-            color=VERDE,
+            color=OURO,
             description="•ri!bronze → Adiciona o cargo Bronze.\n"
                         "•ri!prata → Adiciona o cargo Prata.\n"
                         "•ri!ouro → Adiciona o cargo Ouro.\n"
