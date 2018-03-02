@@ -3,7 +3,7 @@
 
 
 
-__**Comandos do Bot:**__
+***Comandos do Bot:***
 
 <p>• ri!ajuda → Mostra os comandos disponíveis no servidor.</p>
 <p>• ri!prefix → Mostra o prefix do Bot.</p>
