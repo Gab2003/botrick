@@ -163,7 +163,7 @@ async def on_message(message):
     if message.content.lower().startswith('ri!ajuda'):
         embed1 = discord.Embed(
             title="→Comandos:",
-            color=ROXO,
+            color=AZUL,
             description="•ri!ping → Mostra o seu ping(em ms).\n"
                         "•ri!bronze → Adiciona o cargo Bronze.\n"
                         "•ri!prata → Adiciona o cargo Prata.\n"
@@ -175,7 +175,9 @@ async def on_message(message):
                         "•ri!convidar → Manda o link do Bot.\n"
                         "•ri!sconvidar → Manda o link do server do Dono do Bot.\n"
                         "•ri!prefix → Mostra o prefix do Bot.\n"
-                        "•ri!ajuda → Mostra os comandos diponíveis no servidor.\n")
+                        "•ri!ajuda → Mostra os comandos diponíveis no servidor.\n"
+                        "•ri!elos → Mostra os elos disponíveis no servidor.\n")
+
 
     botmsg = await client.send_message(message.channel, embed=embed1)
 
