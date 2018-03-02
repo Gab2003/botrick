@@ -52,6 +52,17 @@ async def on_member_join(member):
 
 @client.event
 async def on_message(message):
+    
+    if message.content.lower().startswith('ri!mutar'):
+        cargomod = discord.utils.find(lambda r: r.name == "Moderador", message.server.roles)
+        if message.author.top_role.position >=  cargomod.position:
+            member = re.sub('ri!mute ', '', message.content)
+            member = discord.utils.find(lambda r: r.mention == member , message.server.members)
+            cargomute = discord.utils.find(lambda r: r.name == "Mutado", message.server.roles)
+            await client.add_roles(member, cargomute)
+            await client.send_message(message.channel,'{0.mention} foi mutado por : {1.mention}'.format(member, message.author))
+        else:
+            await client.send_message(message.channel,'**Você não tem permissão para usar esse comando!**  :rage:')
 
     if message.content.lower().startswith('ri!elos'):
         embed1 = discord.Embed(
@@ -146,7 +157,7 @@ async def on_message(message):
                 await client.delete_message(message)
                 await client.delete_message(botmsgdelete)
         else:
-            await client.send_message(message.channel, " Você não tem permissão para usar este comando")
+            await client.send_message(message.channel, " **Você não tem permissão para usar esse comando!**  :rage:")
             await client.delete_message(message)
 
     if message.content.lower().startswith('ri!ajuda'):
