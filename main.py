@@ -38,7 +38,7 @@ async def on_ready():
     print(client.servers)
     print(client.user.id)
     print('=-=-=Gabriel=-=-=')
-    await client.change_presence(game=discord.Game(name="ri!ajuda || Estou on em" + str(len(client.servers)) + "servidores!", url='https://twitch.tv/tmpoarr', type=1))
+    await client.change_presence(game=discord.Game(name="ri!ajuda || Estou on em " + str(len(client.servers)) + " servidores!", url='https://twitch.tv/tmpoarr', type=1))
 
 
 @client.event
