@@ -12,7 +12,7 @@ client.get_all_emojis()
 
 ROXO = 0x43168C
 VERMELHO = 0xE1313A
-OURO = 0xD0AC2C
+AMARELO = 0xFFFF00
 AZUL = 0x5CCFDB
 VERDE = 0x10DE3D
 token = secreto.seu_token()
@@ -38,7 +38,7 @@ async def on_ready():
     print(client.servers)
     print(client.user.id)
     print('=-=-=Gabriel=-=-=')
-    await client.change_presence(game=discord.Game(name="ri!ajuda || Estou on em " + str(len(client.servers)) + " servidores!", url='https://twitch.tv/tmpoarr', type=1))
+    await client.change_presence(game=discord.Game(name="ri!ajuda || Estou on em " +str(len(client.servers))+ "servidores!", url='https://twitch.tv/tmpoarr', type=1))
 
 
 @client.event
@@ -56,7 +56,7 @@ async def on_message(message):
     if message.content.lower().startswith('ri!elos'):
         embed1 = discord.Embed(
             title="→Elos diponíveis:",
-            color=OURO,
+            color=AMARELO,
             description="•ri!bronze → Adiciona o cargo Bronze.\n"
                         "•ri!prata → Adiciona o cargo Prata.\n"
                         "•ri!ouro → Adiciona o cargo Ouro.\n"
