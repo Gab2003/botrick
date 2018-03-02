@@ -54,7 +54,7 @@ async def on_member_join(member):
 async def on_message(message):
     
     if message.content.lower().startswith('ri!mutar'):
-        cargomod = discord.utils.find(lambda r: r.name == "Moderador", message.server.roles)
+        cargomod = discord.utils.find(lambda r: r.name == "Moderadores", message.server.roles)
         if message.author.top_role.position >=  cargomod.position:
             member = re.sub('ri!mute ', '', message.content)
             member = discord.utils.find(lambda r: r.mention == member , message.server.members)
