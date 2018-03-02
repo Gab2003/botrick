@@ -177,6 +177,7 @@ async def on_message(message):
                         "•ri!prefix → Mostra o prefix do Bot.\n"
                         "•ri!ajuda → Mostra os comandos diponíveis no servidor.\n"
                         "•ri!elos → Mostra os elos disponíveis no servidor.\n")
+                        "•ri!mutar → Muta o usuário mencionado do servidor.\n")
 
 
     botmsg = await client.send_message(message.channel, embed=embed1)
