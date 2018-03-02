@@ -11,7 +11,6 @@
 <p>• ri!convidar → Envia o link do Bot.</p>
 <p>• ri!sconvidar → Envia o link do servidor do dono do Bot.</p>
 <p>• ri!elos → Mostra os elos disponíveis no servidor.</p>
-<p>• ri!regras → Mostra as regras do servidor.</p>
 <br>
 <br>
 
