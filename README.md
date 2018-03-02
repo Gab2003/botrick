@@ -13,3 +13,8 @@
 <p>• ri!sconvidar → Envia o link do servidor do dono do Bot.</p>
 <p>• ri!elos → Mostra os elos disponíveis no servidor.</p>
 <p>• ri!regras → Mostra as regras do servidor.</p>
+
+
+
+
+Se você quiser adicionar o Bot Rick ao seu servidor clique [aqui](https://discordapp.com/oauth2/authorize?client_id=415640814371340288&scope=bot&permissions=8)
