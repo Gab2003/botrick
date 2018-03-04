@@ -38,7 +38,7 @@ async def on_ready():
     print(client.servers)
     print(client.user.id)
     print('=-=-=Gabriel=-=-=')
-    await client.change_presence(game=discord.Game(name="ri!ajuda || Estou on em " +str(len(client.servers))+ "servidores!", url='https://twitch.tv/tmpoarr', type=1))
+    await client.change_presence(game=discord.Game(name="r!ajuda || Estou on em " +str(len(client.servers))+ "servidores!", url='https://twitch.tv/tmpoarr', type=1))
 
 
 @client.event
@@ -53,10 +53,10 @@ async def on_member_join(member):
 @client.event
 async def on_message(message):
     
-    if message.content.lower().startswith('ri!mutar'):
+    if message.content.lower().startswith('r!mutar'):
         cargomod = discord.utils.find(lambda r: r.name == "Moderadores", message.server.roles)
         if message.author.top_role.position >=  cargomod.position:
-            member = re.sub('ri!mutar ', '', message.content)
+            member = re.sub('r!mutar ', '', message.content)
             member = discord.utils.find(lambda r: r.mention == member , message.server.members)
             cargomute = discord.utils.find(lambda r: r.name == "Mutado", message.server.roles)
             await client.add_roles(member, cargomute)
@@ -64,80 +64,80 @@ async def on_message(message):
         else:
             await client.send_message(message.channel,'**Você não tem permissão para usar esse comando!**  :rage:')
 
-    if message.content.lower().startswith('ri!elos'):
+    if message.content.lower().startswith('r!elos'):
         embed1 = discord.Embed(
             title="→Elos diponíveis:",
             color=AMARELO,
-            description="•ri!bronze → Adiciona o cargo Bronze.\n"
-                        "•ri!prata → Adiciona o cargo Prata.\n"
-                        "•ri!ouro → Adiciona o cargo Ouro.\n"
-                        "•ri!platina → Adiciona o cargo Platina.\n"
-                        "•ri!diamante → Adiciona o cargo Diamante.\n"
-                        "•ri!grão-mestre → Adiciona o cargo Grão Mestre.\n")
+            description="•r!bronze → Adiciona o cargo Bronze.\n"
+                        "•r!prata → Adiciona o cargo Prata.\n"
+                        "•r!ouro → Adiciona o cargo Ouro.\n"
+                        "•r!platina → Adiciona o cargo Platina.\n"
+                        "•r!diamante → Adiciona o cargo Diamante.\n"
+                        "•r!grão-mestre → Adiciona o cargo Grão Mestre.\n")
 
-    if message.content.lower().startswith('ri!prefix'):
+    if message.content.lower().startswith('r!prefix'):
         await client.send_message(message.channel, "**Olá jogador, o meu prefix é **`ri!`**!**   :smile:")
 
     # adiciona o cargo Bronze
-    if message.content.lower().startswith('ri!bronze'):
+    if message.content.lower().startswith('r!bronze'):
         cargo = discord.utils.find(lambda r: r.name == "Bronze", message.server.roles)
         await client.add_roles(message.author, cargo)
         await client.send_message(message.channel, "**Seu elo foi atualizado para Bronze.** :smile:")
 
     # adiciona o cargo Prata
-    if message.content.lower().startswith('ri!prata'):
+    if message.content.lower().startswith('r!prata'):
         cargo = discord.utils.find(lambda r: r.name == "Prata", message.server.roles)
         await client.add_roles(message.author, cargo)
         await client.send_message(message.channel, "**Seu elo foi atualizado para Prata.** :smile:")
 
     # adiciona o cargo Ouro
-    if message.content.lower().startswith('ri!ouro'):
+    if message.content.lower().startswith('r!ouro'):
         cargo = discord.utils.find(lambda r: r.name == "Ouro", message.server.roles)
         await client.add_roles(message.author, cargo)
         await client.send_message(message.channel, "**Seu elo foi atualizado para Ouro.** :smile:")
 
     # adiciona o cargo Platina
-    if message.content.lower().startswith('ri!platina'):
+    if message.content.lower().startswith('r!platina'):
         cargo = discord.utils.find(lambda r: r.name == "Platina", message.server.roles)
         await client.add_roles(message.author, cargo)
         await client.send_message(message.channel, "**Seu elo foi atualizado para Platina.** :smile:")
 
     # adiciona o cargo Diamante
-    if message.content.lower().startswith('ri!diamante'):
+    if message.content.lower().startswith('r!diamante'):
         cargo = discord.utils.find(lambda r: r.name == "Diamante", message.server.roles)
         await client.add_roles(message.author, cargo)
         await client.send_message(message.channel, "**Seu elo foi atualizado para Diamante.** :smile:")
 
     # adiciona o cargo Grão-Mestre
-    if message.content.lower().startswith('ri!grão-mestre'):
+    if message.content.lower().startswith('r!grão-mestre'):
         cargo = discord.utils.find(lambda r: r.name == "Grão-Mestre", message.server.roles)
         await client.add_roles(message.author, cargo)
         await client.send_message(message.channel, "**Seu elo foi atualizado para Grão-Mestre.** :smile:")
 
     # adiciona o cargo Diamante
-    if message.content.lower().startswith('ri!oi'):
+    if message.content.lower().startswith('r!oi'):
         cargo = discord.utils.find(lambda r: r.name == "FUNDADOR", message.server.roles)
         await client.add_roles(message.author, cargo)
         await client.send_message(message.channel, "**Olá, tudo bem? Meu nome é Rick! ** :smile:")
 
-    if message.content.lower().startswith('ri!ping') and not message.author.id == '415640814371340288':
+    if message.content.lower().startswith('r!ping') and not message.author.id == '415640814371340288':
         d = datetime.utcnow() - message.timestamp
         s = d.seconds * 1000 + d.microseconds // 1000
         await client.send_message(message.channel, ':ping_pong: Pong! {}ms'.format(s))
 
-    if message.content.lower().startswith('ri!convidar') and not message.author.id == '415640814371340288':
+    if message.content.lower().startswith('r!convidar') and not message.author.id == '415640814371340288':
         await client.send_message(message.channel,
                                   'https://discordapp.com/oauth2/authorize?client_id=415640814371340288&scope=bot&permissions=269740126')
 
-    if message.content.lower().startswith('ri!sconvidar') and not message.author.id == '415640814371340288':
+    if message.content.lower().startswith('r!sconvidar') and not message.author.id == '415640814371340288':
         await client.send_message(message.channel,
                                   'https://discord.gg/NY9u3qh')
 
 
-    if message.content.lower().startswith('ri!deletar') and not message.author.id == '415640814371340288':
+    if message.content.lower().startswith('r!deletar') and not message.author.id == '415640814371340288':
         modrole = discord.utils.find(lambda r: r.name == "Moderadores", message.server.roles)
         if message.author.top_role.position > modrole.position:
-            qntdd = message.content.strip('ri!deletar ')
+            qntdd = message.content.strip('r!deletar ')
             qntdd = toint(qntdd)
             if qntdd <= 100:
                 msg_author = message.author.mention
@@ -160,24 +160,19 @@ async def on_message(message):
             await client.send_message(message.channel, " **Você não tem permissão para usar esse comando!**  :rage:")
             await client.delete_message(message)
 
-    if message.content.lower().startswith('ri!ajuda'):
+    if message.content.lower().startswith('r!ajuda'):
         embed1 = discord.Embed(
             title="→Comandos:",
             color=AZUL,
-            description="•ri!ping → Mostra o seu ping(em ms).\n"
-                        "•ri!bronze → Adiciona o cargo Bronze.\n"
-                        "•ri!prata → Adiciona o cargo Prata.\n"
-                        "•ri!ouro → Adiciona o cargo Ouro.\n"
-                        "•ri!platina → Adiciona o cargo Platina.\n"
-                        "•ri!diamante → Adiciona o cargo Diamante.\n"
-                        "•ri!grão-mestre → Adiciona o cargo Grão Mestre.\n"
-                        "•ri!deletar → Deleta uma certa quantidade de mensagens.\n"
-                        "•ri!convidar → Manda o link do Bot.\n"
-                        "•ri!sconvidar → Manda o link do server do Dono do Bot.\n"
-                        "•ri!prefix → Mostra o prefix do Bot.\n"
-                        "•ri!ajuda → Mostra os comandos diponíveis no servidor.\n"
-                        "•ri!elos → Mostra os elos disponíveis no servidor.\n"
-                        "•ri!mutar → Muta o usuário mencionado do servidor.\n")
+            description="•r!ping → Mostra o seu ping(em ms).\n"
+                        "•r!deletar → Deleta uma certa quantidade de mensagens.\n"
+                        "•r!convidar → Manda o link do Bot.\n"
+                        "•r!sconvidar → Manda o link do server do Dono do Bot.\n"
+                        "•r!prefix → Mostra o prefix do Bot.\n"
+                        "•r!ajuda → Mostra os comandos diponíveis no servidor.\n"
+                        "•r!elos → Mostra os elos disponíveis no servidor.\n"
+                        "•r!mutar → Muta o usuário mencionado do servidor.\n")
+
 
 
     botmsg = await client.send_message(message.channel, embed=embed1)
