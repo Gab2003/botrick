@@ -45,23 +45,16 @@ async def on_ready():
 async def on_member_join(member):
     # Envia uma mensagem privada de boas vindas com o nome do servidor e mencionando o usuario
     await client.send_message(member, 'Olá' + member.mention + 'Bem vindo ao' + member.server.name + 'Leia as regras no canal #avisos para evitar banimentos!')
-    await client.send_message(client.get_channel('412051386956775426'), 'Bem vindo ao server' + member.mention)
+    await client.send_message(client.get_channel('412051386956775426'), 'Bem vindo ao server, ' + member.mention)
     # Adiciona o cargo "Membro" ao membro que entrou
     role = discord.utils.find(lambda r: r.name == "Membro", member.server.roles)
     await client.add_roles(member, role)
     
 @client.event
 async def on_member_ban(user):
-    channel = discord.utils.find(lambda c: c.name == 'bate-papo', user.server.channels)
+    channel = discord.utils.find(lambda c: c.name == 'banimentos', user.server.channels)
     embed = discord.Embed(title='Sinta o martelo!', description='O usuário **@{0.name}** foi banido do servidor!\n\nO martelo deve ter doído :0'.format(user), color=defcolor)
     embed.set_image(url='https://im4.ezgif.com/tmp/ezgif-4-78bb814d9d.gif')
-    embed.set_thumbnail(url=user.avatar_url)
-    await client.send_message(channel, embed=embed)
-    
-@client.event
-async def on_member_unban(user):
-    channel = discord.utils.find(lambda c: c.name == 'bate-papo', user.server.channels)
-    embed = discord.Embed(title='Sinta o martelo!', description='O usuário **@{0.name}** foi desbanido do servidor!'.format(user), color=defcolor)
     embed.set_thumbnail(url=user.avatar_url)
     await client.send_message(channel, embed=embed)
 
@@ -91,7 +84,7 @@ async def on_message(message):
                         "•r!grão-mestre → Adiciona o cargo Grão Mestre.\n")
 
     if message.content.lower().startswith('r!prefix'):
-        await client.send_message(message.channel, "**Olá jogador, o meu prefix é **`ri!`**!**   :smile:")
+        await client.send_message(message.channel, "**Olá jogador, o meu prefix é **`r!`**!**   :smile:")
 
     # adiciona o cargo Bronze
     if message.content.lower().startswith('r!bronze'):
@@ -183,7 +176,6 @@ async def on_message(message):
                         "•r!deletar → Deleta uma certa quantidade de mensagens.\n"
                         "•r!convidar → Manda o link do Bot.\n"
                         "•r!sconvidar → Manda o link do server do Dono do Bot.\n"
-                        "•r!prefix → Mostra o prefix do Bot.\n"
                         "•r!ajuda → Mostra os comandos diponíveis no servidor.\n"
                         "•r!elos → Mostra os elos disponíveis no servidor.\n"
                         "•r!mutar → Muta o usuário mencionado do servidor.\n")
