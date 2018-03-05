@@ -11,6 +11,7 @@ client = discord.Client()
 client.get_all_emojis()
 
 ROXO = 0x43168C
+VESC = 0xFF0000
 VERMELHO = 0xE1313A
 AMARELO = 0xFFFF00
 AZUL = 0x5CCFDB
@@ -50,6 +51,13 @@ async def on_member_join(member):
     role = discord.utils.find(lambda r: r.name == "Membro", member.server.roles)
     await client.add_roles(member, role)
     
+@client.event
+async def on_member_ban(user):
+    channel = discord.utils.find(lambda c: c.name == 'banimentos', user.server.channels)
+    embed2 = discord.Embed(title='***Banimento:***', description='O usuário **@{0.name}** foi banido do servidor!\n\nSe o usuário @{0.name} respeitasse as regras, não seria banido.'.format(user), color=VESC)
+    embed.set_image(url='https://im4.ezgif.com/tmp/ezgif-4-78bb814d9d.gif')
+    embed.set_thumbnail(url=user.avatar_url)
+    await client.send_message(channel, embed=embed2)
 
 @client.event
 async def on_message(message):
