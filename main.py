@@ -53,7 +53,7 @@ async def on_member_join(member):
 @client.event
 async def on_member_ban(user):
     channel = discord.utils.find(lambda c: c.name == 'banimentos', user.server.channels)
-    embed2 = discord.Embed(title='Sinta o martelo!', description='O usuário **@{0.name}** foi banido do servidor!\n\nO martelo deve ter doído :0'.format(user), color=defcolor)
+    embed = discord.Embed(title="**Ban**", description="O membro **@{0.name}** foi banido do servidor".format(user), color=0xFF7F00
     embed.set_image(url='https://im4.ezgif.com/tmp/ezgif-4-78bb814d9d.gif')
     embed.set_thumbnail(url=user.avatar_url)
     await client.send_message(channel, embed=embed2)
