@@ -1,14 +1,21 @@
 import discord
 import asyncio
 import random
-import secreto
 import re
 import aiohttp
 import websockets
 from datetime import datetime, timedelta
+import os
 
 client = discord.Client()
 client.get_all_emojis()
+
+is_prod = os.environ.get('IS_HEROKU', None)
+if is_prod:
+    token = os.environ.get('TOKEN')
+else:
+    import secreto
+    token = secreto.token
 
 ROXO = 0x43168C
 VESC = 0xFF0000
@@ -16,7 +23,6 @@ VERMELHO = 0xE1313A
 AMARELO = 0xFFFF00
 AZUL = 0x5CCFDB
 VERDE = 0x10DE3D
-token = secreto.seu_token()
 msg_id = None
 msg_user = None
 msg_author = None
