@@ -7,7 +7,7 @@ idna==2.6
 multidict==4.1.0
 pew==1.1.2
 pipenv==10.1.2
-psutil==5.3.1
+psutil==5.6.6
 requests==2.18.4
 urllib3==1.22
 virtualenv==15.1.0
